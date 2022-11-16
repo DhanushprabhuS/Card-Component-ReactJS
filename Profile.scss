@@ -1,0 +1,84 @@
+$brown: #ff0000;
+.profile {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    float: left;
+    width: 100px;
+    height: 20vh;
+    background-color: black;
+    text-align: center;
+    .image {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin: 0px auto 0 auto;
+        .circle-1 {
+            position: absolute;
+            box-sizing: border-box;
+            width: 72px;
+            height: 72px;
+            top: -3px;
+            left: -3px;
+            border-width: 1.5px;
+            border-style: solid;
+            border-color: $brown $brown $brown transparent;
+            border-radius: 50%;
+            transition: all 1.5s ease-in-out;
+        }
+        .circle-2 {
+            @extend .circle-1;
+            width: 79px;
+            height: 79px;
+            top: -6px;
+            left: -6px;
+            border-color: $brown transparent $brown $brown;
+        }
+        img {
+            float: left;
+            height: 70px;
+            width: 70px;
+            display: block;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+        &:hover {
+            cursor: pointer;
+            .circle-1 {
+                transform: rotate(360deg);
+            }
+            .circle-2 {
+                transform: rotate(-360deg);
+            }
+        }
+    }
+    .name {
+        color: #fff;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .job {
+        font-size: 12px;
+        font-weight: 550;
+    }
+    .actions {
+        .btn {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 0 auto 10px auto;
+            background: none;
+            border: 1px solid $brown;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            box-sizing: border-box;
+            transition: all .3s ease-in-out;
+            color: $brown;
+            &:hover {
+                background: $brown;
+                color: #fff;
+            }
+        }
+    }
+}
